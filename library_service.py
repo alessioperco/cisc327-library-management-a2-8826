@@ -147,7 +147,7 @@ def return_book_by_patron(patron_id: str, book_id: int) -> Tuple[bool, str]:
         return False, "Database error occured while updating book return date."
 
     
-    return True, f'Successfully returned "{book['title']}" on {return_date.strftime("%Y-%m-%d")}. ${late_fee['fee_amount']:,.2f} owed in late fees.'
+    return True, f'Successfully returned "{book["title"]}" on {return_date.strftime("%Y-%m-%d")}. ${late_fee['fee_amount']:,.2f} owed in late fees.'
 
 def calculate_late_fee_for_book(patron_id: str, book_id: int) -> Dict:
     """
