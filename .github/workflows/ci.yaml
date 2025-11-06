@@ -39,7 +39,7 @@ jobs:
 
       - name: Start database
         run: import database
-          init_database()
+        run: init_database()
 
       - name: Run tests
         run: pytest
