@@ -1,5 +1,5 @@
 import pytest
-from library_service import (
+from services.library_service import (
     borrow_book_by_patron, add_book_to_catalog
 )
 #For pytesting to work, make sure that this file is in the same directory as library_service.py
