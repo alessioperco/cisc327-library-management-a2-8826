@@ -2,19 +2,15 @@ name: library service CI
 
 on:
   push:
-  pull_request:
+    branches: [main]
 
 jobs:
   run-tests:
     strategy:
       fail-fast: false
-      matrix:
-        os: [windows-latest]
-        python-version:
-          - "3.11.5"
     
     name: tests
-    runs-on: ${{ matrix.os }}
+    runs-on: windows-latest
 
     steps:
       - name: Checkout code
@@ -23,7 +19,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: "3.11.5"
 
       - name: make venv
         run: python -m venv venv
@@ -41,4 +37,4 @@ jobs:
         run: python -c "from database import init_database; init_database()"
 
       - name: Run tests
-        run: pytest
+        run: pytest  --cov-report=xml tests/
