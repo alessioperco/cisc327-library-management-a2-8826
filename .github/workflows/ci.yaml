@@ -5,11 +5,9 @@ on:
     branches: [main]
 
 jobs:
-  run-tests:
+  test:
     strategy:
       fail-fast: false
-    
-    name: tests
     runs-on: windows-latest
 
     steps:
@@ -37,4 +35,4 @@ jobs:
         run: python -c "from database import init_database; init_database()"
 
       - name: Run tests
-        run: pytest  --cov-report=xml tests/
+        run: pytest  --cov=. --cov-report=xml tests/
