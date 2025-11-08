@@ -35,4 +35,4 @@ jobs:
         run: python -c "from database import init_database; init_database()"
 
       - name: Run tests
-        run: pytest  --cov=. --cov-report=xml tests/
+        run: pytest  --cov=services.library_service --cov-report=xml tests/
