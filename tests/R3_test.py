@@ -26,7 +26,7 @@ def test_book_borrow_invalid_too_many_books():
 
 def test_book_borow_invalid_book_not_available():
     """Test borrowing a book when the book is not available"""
-    success, message = borrow_book_by_patron("123456", 3) #1984
+    success, message = borrow_book_by_patron("123457", 3) #1984
 
     assert success == False
     assert "not available" in message.lower()

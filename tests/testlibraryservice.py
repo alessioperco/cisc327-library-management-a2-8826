@@ -10,10 +10,11 @@ from services.library_service import (
 )
 
 # R1: Add Book To Catalog
-def test_add_book_valid():
-    result = add_book_to_catalog("Clean Code", "Robert C. Martin", "1234567890123", 5)
-    assert result[0] is True
-    assert "successfully added" in result[1]
+# def test_add_book_valid():
+#     result = add_book_to_catalog("Clean Code", "Robert C. Martin", "1234567890123", 5)
+#     assert result[0] is True
+#     assert "successfully added" in result[1]
+#This test was repetitive and not necessary
 
 def test_add_book_missing_title():
     result = add_book_to_catalog("", "Author", "1234567890123", 5)

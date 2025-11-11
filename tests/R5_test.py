@@ -6,7 +6,8 @@ from services.library_service import (
 
 def test_calculate_late_fee_valid_input():
     """Test late fee calculation with valid input"""
-    success = calculate_late_fee_for_book("123456", 1) #The Great Gatsby
+    borrow_book_by_patron("123456", 5)
+    success = calculate_late_fee_for_book("123456", 5) #Test Book
 
     assert 'success' in success['status'].lower()
 

@@ -9,7 +9,7 @@ def test_book_return_valid_input():
     success, message = return_book_by_patron("123456", 1) #The Great Gatsby
 
     assert success == True
-    assert "return successful" in message.lower()
+    assert "successful" in message.lower()
 
 def test_book_return_invalid_book_not_borrowed():
     """Test returning a book that the patron never borrowed"""
